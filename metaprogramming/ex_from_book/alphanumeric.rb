@@ -7,20 +7,20 @@ require 'test/unit'
 # We make no guarantees that this code is fit for any purpose.
 # Visit http://www.pragmaticprogrammer.com/titles/ppmetr for more book information.
 #---
-def to_alphanumeric(s)
-  s.gsub /[^\w\s]/, ''
-end
-
-
-class ToAlphanumericTest < Test::Unit::TestCase
-  def test_strips_non_alphanumeric_characters
-    assert_equal '3 the Magic Number', to_alphanumeric('#3, the *Magic, Number*?')
-  end
-end
 
 class String
   def to_alphanumeric
     gsub /[^\w\s]/, ''
+  end
+end
+
+def to_alphanumeric(s)
+  s.gsub /[^\w\s]/, ''
+end
+
+class ToAlphanumericTest < Test::Unit::TestCase
+  def test_strips_non_alphanumeric_characters
+    assert_equal '3 the Magic Number', to_alphanumeric('#3, the *Magic, Number*?')
   end
 end
 

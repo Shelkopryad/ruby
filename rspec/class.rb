@@ -1,7 +1,23 @@
-require 'faker'
+class Calculator
 
-class TestClass
-  def multyply(num)
-    num*5
+  def sum(a, b)
+    a + b
   end
+
+  def substract(a, b)
+    a - b
+  end
+
+  def multyply(a, b)
+    a * b
+  end
+
+  def divide(a, b)
+    begin
+      a / b
+    rescue
+      "Divide by zero"
+    end
+  end
+
 end
