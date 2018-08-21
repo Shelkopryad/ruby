@@ -21,7 +21,7 @@ else
 end
 
 # Замена букв
-input.gsub!(/s/, "th")
+# input.gsub!(/s/, "th")
 
 # Loops & Iterators
 counter = 1
