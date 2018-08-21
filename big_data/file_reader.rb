@@ -55,8 +55,8 @@ end
 
 
 
-path = "/home/shelkopryad/work/repos/free_projects/ruby/big_data"
-regex = /рассказ/i
+path = "path_to_file"
+regex = /месяц/i
 s = FileReader.new path
 s.search regex
 s.counter 20

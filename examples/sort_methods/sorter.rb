@@ -9,7 +9,7 @@ class Sorter
       end
       arr[i], arr[min_i] = arr[min_i], arr[i] if i != min_i
     end
-    p arr
+    arr
   end
 
   def bubble_sort(arr)
@@ -18,23 +18,25 @@ class Sorter
         arr[i], arr[i+1] = arr[i+1], arr[i] if arr[i] > arr[i+1]
       end
     end
-    p arr
+    arr
   end
 
-  # def q_sort(arr)
-  #   [] if arr.empty?
-  #   left, right = arr.partition { |y| y <= arr.first }
-  #   q_sort(left) + [ arr.first ] + q_sort(right)
-  #   p arr
-  # end
-
-
-
-
+  def quick_sort(arr)
+    if arr.length < 2
+      arr
+    else 
+      pivot = arr[0]
+      less = arr.select { |a| a < pivot }
+      greater = arr.select { |a| a > pivot }
+      quick_sort(less) + [pivot] + quick_sort(greater)
+    end
+  end
+  
 end
 
 s = Sorter.new
-a = [1, 5, 3, 7, 2, 0, 4, 9, 8]
-s.selection_sort a
-s.bubble_sort a
+a = [8, 5, 3, 7, 2, 0, 4, 9, 1]
+p s.selection_sort a
+p s.bubble_sort a
+p s.quick_sort a
 # s.q_sort a
