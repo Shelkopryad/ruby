@@ -3,10 +3,14 @@ def rec(n)
   return rec(n-1)*n
 end
 
+p rec(10)
+
 def rec2(n)
   return n if n == 1
   return rec2(n-1)
 end
+
+p rec2(10)
 
 def fib(n)
   if ((n == 1) || (n == 2))
