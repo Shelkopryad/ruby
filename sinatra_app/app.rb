@@ -12,3 +12,8 @@ get '/leagues' do
   @result = JSON.parse(res.body)
   erb :'templates/leagues'
 end
+
+get '/hello' do
+  @arr = {Ruby: "Ruby for smart", Java: "Work with Java everyday"}
+  erb :'templates/hello'
+end
