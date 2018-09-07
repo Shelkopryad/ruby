@@ -1,12 +1,14 @@
 require 'sinatra'
+require 'net/http'
+require "json"
 
 get '/' do
-  logger.info "loading data"
   erb :'templates/index'
 end
 
-post '/hello' do
-  @name = params['name']
-  logger.info @name
-  erb :'templates/hello'
+get '/leagues' do
+  uri = URI('http://api.pathofexile.com/leagues')
+  res = Net::HTTP.get_response(uri)
+  @result = JSON.parse(res.body)
+  erb :'templates/leagues'
 end

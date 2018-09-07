@@ -1,0 +1,19 @@
+<div class="row">
+  <% @result.each do |value| %>
+    <div class="col-sm-3">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= value['id'] %></h5>
+          <% unless value['rules'][0].nil? %>
+            <h6 class="card-subtitle mb-2 text-muted"><%= value['rules'][0]['description'] %></h6>
+          <% end %>
+          <p class="card-text">Старт: <%= value['startAt'] %></p>
+          <p class="card-text">Конец: <%= value['endAt'] %></p>
+          <% unless value['url'].nil? %>
+            <a href="<%= value['url'] %>" class="card-link">Link</a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
