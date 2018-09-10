@@ -2,6 +2,14 @@ require 'sinatra'
 require 'net/http'
 require "json"
 
+# file = File.read "gwent/cards.json"
+# data = JSON.parse(file)
+# data.each do |key, value|
+#   unless value['categories'].nil?
+#     p value['variations'][key + "00"]['art']['low']
+#   end
+# end
+
 get '/' do
   erb :'templates/index'
 end
@@ -13,7 +21,8 @@ get '/leagues' do
   erb :'templates/leagues'
 end
 
-get '/hello' do
-  @arr = {Ruby: "Ruby for smart", Java: "Work with Java everyday"}
-  erb :'templates/hello'
+get '/gwent' do
+  file = File.read "gwent/cards.json"
+  @data = JSON.parse(file)
+  erb :'templates/gwent'
 end
