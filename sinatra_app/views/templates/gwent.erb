@@ -3,12 +3,9 @@
     <div class="col-sm-3">
       <div class="card">
       <% unless value['categories'].nil? %>
-
         <% unless value['variations'][key + "00"]['art']['low'].nil? %>
           <img class="card-img-top" src="<%= value['variations'][key + "00"]['art']['low'] %>">
         <% end %>
-
-
           <div class="card-body">
             <h5 class="card-title"><%= value['name']['ru-RU'] %></h5>
             <h6 class="card-title"><%= value['faction'] %></h6>
